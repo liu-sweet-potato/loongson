@@ -1,0 +1,10 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+C:/Projects/loongson/exp3/exp3.gen/sources_1/ip/block_ram/sim/block_ram.v,1761904749,verilog,,C:/Projects/loongson/exp3/exp3.srcs/sources_1/new/block_ram_top.v,,block_ram,,,,,,,,
+C:/Projects/loongson/exp3/exp3.gen/sources_1/ip/distributed_ram/sim/distributed_ram.v,1761904581,verilog,,C:/Projects/loongson/exp3/exp3.srcs/sources_1/new/distributed_ram_top.v,,distributed_ram,,,,,,,,
+C:/Projects/loongson/exp3/exp3.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
+C:/Projects/loongson/exp3/exp3.srcs/sim_1/new/ram_tb.v,1761905956,verilog,,,,tb_top,,,,,,,,
+C:/Projects/loongson/exp3/exp3.srcs/sources_1/new/block_ram_top.v,1761904162,verilog,,C:/Projects/loongson/exp3/exp3.srcs/sim_1/new/ram_tb.v,,bram_top,,,,,,,,
+C:/Projects/loongson/exp3/exp3.srcs/sources_1/new/distributed_ram_top.v,1761904094,verilog,,C:/Projects/loongson/exp3/exp3.srcs/sim_1/new/ram_tb.v,,dram_top,,,,,,,,

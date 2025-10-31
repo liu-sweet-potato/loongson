@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+=============================
+Test Begin
+TEST END
+$finish called at time : 2621 ns : File "C:/Projects/loongson/exp2/exp2.srcs/sim_1/new/rf_tb.v" Line 123

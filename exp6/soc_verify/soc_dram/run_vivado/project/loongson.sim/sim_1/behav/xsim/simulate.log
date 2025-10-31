@@ -1,0 +1,50 @@
+Time resolution is 1 ps
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+==============================================================
+Test begin!
+WARNING in tb_top.soc_lite.data_ram.inst at time              2055000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              2065000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              2085000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              2105000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              2125000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              2185000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              2425000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              2475000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              2675000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              2725000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              2775000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              2825000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              2875000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              3135000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              3185000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              3235000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              3285000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              3335000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              3385000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              3435000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              3685000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_top.soc_lite.data_ram.inst at time              3735000 ns: 
+Reading from out-of-range address. Max address in tb_top.soc_lite.data_ram.inst is        1023
+WARNING in tb_t

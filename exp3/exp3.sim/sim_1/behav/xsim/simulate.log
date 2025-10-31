@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+=============================
+Test Begin
+TEST END
+$finish called at time : 2611 ns : File "C:/Projects/loongson/exp3/exp3.srcs/sim_1/new/ram_tb.v" Line 96

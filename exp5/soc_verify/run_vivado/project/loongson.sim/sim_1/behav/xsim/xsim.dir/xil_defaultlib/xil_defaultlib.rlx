@@ -1,0 +1,14 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+C:/Projects/loongson/exp5/miniCPU/minicpu_top.v,1761896805,verilog,,C:/Projects/loongson/exp5/miniCPU/regfile.v,,minicpu_top,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
+C:/Projects/loongson/exp5/miniCPU/regfile.v,1749031051,verilog,,C:/Projects/loongson/exp5/soc_verify/rtl/soc_mini_top.v,,regfile,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
+C:/Projects/loongson/exp5/miniCPU/tools.v,1761896967,verilog,,C:/Projects/loongson/exp5/soc_verify/testbench/mycpu_tb.v,,decoder_2_4;decoder_4_16;decoder_5_32;decoder_6_64,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
+C:/Projects/loongson/exp5/soc_verify/rtl/CONFREG/confreg.v,1761897053,verilog,,C:/Projects/loongson/exp5/miniCPU/minicpu_top.v,,confreg,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
+C:/Projects/loongson/exp5/soc_verify/rtl/soc_mini_top.v,1749031051,verilog,,C:/Projects/loongson/exp5/miniCPU/tools.v,,soc_mini_top,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
+C:/Projects/loongson/exp5/soc_verify/rtl/xilinx_ip/clk_pll/clk_pll.v,1761896940,verilog,,C:/Projects/loongson/exp5/soc_verify/rtl/xilinx_ip/inst_ram/sim/inst_ram.v,,clk_pll,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
+C:/Projects/loongson/exp5/soc_verify/rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v,1761896940,verilog,,C:/Projects/loongson/exp5/soc_verify/rtl/xilinx_ip/clk_pll/clk_pll.v,,clk_pll_clk_wiz,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
+C:/Projects/loongson/exp5/soc_verify/rtl/xilinx_ip/inst_ram/sim/inst_ram.v,1761897220,verilog,,C:/Projects/loongson/exp5/soc_verify/rtl/CONFREG/confreg.v,,inst_ram,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
+C:/Projects/loongson/exp5/soc_verify/run_vivado/project/loongson.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
+C:/Projects/loongson/exp5/soc_verify/testbench/mycpu_tb.v,1749031051,verilog,,,,tb_top,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,

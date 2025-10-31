@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/loongson/exp4/exp4.srcs/sources_1/new/show_sw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module show_sw
+INFO: [VRFC 10-311] analyzing module show_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/loongson/exp4/exp4.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb

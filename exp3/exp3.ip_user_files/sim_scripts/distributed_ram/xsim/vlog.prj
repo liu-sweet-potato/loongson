@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../exp3.gen/sources_1/ip/distributed_ram/sim/distributed_ram.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort
