@@ -21,7 +21,7 @@
 - [x] exp5  : 5条指令单周期CPU，跑斐波那契数程序，给RTL填空方式。
 
 ### **文件路径：mycpu_env**/soc_verify/**soc_dram** *(distributed ram interface)* 
-- [ ] exp6  : 20条指令单周期CPU，测试规模缩减版func的n1~n20，给RTL找错误并修正。
+- [x] exp6  : 20条指令单周期CPU，测试规模缩减版func的n1~n20，给RTL找错误并修正。
 
 ### **文件路径：mycpu_env**/soc_verify/**soc_bram** *(block ram interface)*
 - [ ] exp7  : 20条指令五级流水CPU，不考虑hazard，测试插NOP的func的n1~n20，增量开发。
@@ -39,7 +39,7 @@
 - [ ] exp13 : 支持更多例外，测试func的n1~n58，增量开发。
 
 ### **文件路径：mycpu_env**/soc_verify/**soc_hs_bram** *(handshaking block ram interface)*
-exp14 : CPU采用带握手机制的接口，测试func的n1~n58，增量开发。
+- [ ] exp14 : CPU采用带握手机制的接口，测试func的n1~n58，增量开发。
 
 ### **文件路径：mycpu_env**/soc_verify/**soc_axi**  *(AXI bus interface)*
 

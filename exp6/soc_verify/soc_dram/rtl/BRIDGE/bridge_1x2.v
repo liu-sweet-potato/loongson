@@ -71,6 +71,7 @@ module bridge_1x2(
     wire sel_sram;  // cpu data is from data ram
     wire sel_conf;  // cpu data is from confreg
 
+    // 片选信号
     assign sel_conf = (cpu_data_addr & `CONF_ADDR_MASK) == `CONF_ADDR_BASE;
     assign sel_sram = !sel_conf;
 
@@ -86,6 +87,7 @@ module bridge_1x2(
     assign conf_addr  = cpu_data_addr;
     assign conf_wdata = cpu_data_wdata;
 
+    // one-hot多路选择器语法糖
     assign cpu_data_rdata = {32{sel_sram}} & data_sram_rdata
                           | {32{sel_conf}} & conf_rdata;
 

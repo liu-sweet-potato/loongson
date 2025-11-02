@@ -163,7 +163,7 @@ inst_ram inst_ram
 (
     .clk   (cpu_clk            ),   
     .we    (cpu_inst_we        ),   
-    .a     (cpu_inst_addr[17:2]),   
+    .a     (cpu_inst_addr[17:2]),  // 默认低15位
     .d     (cpu_inst_wdata     ),   
     .spo   (cpu_inst_rdata     )   
 );
@@ -195,7 +195,7 @@ data_ram data_ram
 (
     .clk   (cpu_clk            ),   
     .we    (data_sram_we & data_sram_en),   
-    .a     (data_sram_addr[17:2]),   
+    .a     (data_sram_addr[17:2]),  // 默认低10位
     .d     (data_sram_wdata    ),   
     .spo   (data_sram_rdata    )   
 );
