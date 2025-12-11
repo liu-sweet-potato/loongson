@@ -60,8 +60,8 @@ assign btn_step    = 2'd3;
 
 initial
 begin
-    $dumpfile("dump.vcd");
-    $dumpvars;
+    //$dumpfile("dump.vcd");
+    //$dumpvars;
     clk = 1'b0;
     resetn = 1'b0;
     #2000;
