@@ -33,5 +33,3 @@ INFO: [VRFC 10-311] analyzing module soc_lite_top
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/loongson/exp8/soc_verify/soc_bram/testbench/mycpu_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_top
 WARNING: [VRFC 10-2096] empty statement in sequential block [C:/Projects/loongson/exp8/soc_verify/soc_bram/testbench/mycpu_tb.v:237]
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/loongson/exp8/soc_verify/soc_bram/run_vivado/project/loongson.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl

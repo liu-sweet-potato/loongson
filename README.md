@@ -26,7 +26,7 @@
 ### **文件路径：mycpu_env**/soc_verify/**soc_bram** *(block ram interface)*
 - [x] exp7  : 20条指令五级流水CPU，不考虑hazard，测试插NOP的func的n1~n20，增量开发。
 
-- [ ] exp8  : 20条指令五级流水CPU，cancel解决control hazard，阻塞解决data hazard，测试func的n1~n20，增量开发。
+- [x] exp8  : 20条指令五级流水CPU，cancel解决control hazard，阻塞解决data hazard，测试func的n1~n20，增量开发。
 
 - [ ] exp9  : 20条指令五级流水CPU，forward优化data hazard处理，测试func的n1~n20，增量开发。
 

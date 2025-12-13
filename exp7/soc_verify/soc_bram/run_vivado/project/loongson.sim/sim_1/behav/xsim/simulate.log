@@ -230,3 +230,4 @@ Test begin!
 Test end!
 ----PASS!!!
 $finish called at time : 2024465 ns : File "C:/Projects/loongson/exp7/soc_verify/soc_bram/testbench/mycpu_tb.v" Line 270
+INFO: xsimkernel Simulation Memory Usage: 26944 KB (Peak: 26944 KB), Simulation CPU Usage: 36952 ms
