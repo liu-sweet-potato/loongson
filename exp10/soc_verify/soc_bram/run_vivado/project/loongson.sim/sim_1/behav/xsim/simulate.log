@@ -1,0 +1,93 @@
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module tb_top.soc_lite.data_ram.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+==============================================================
+Test begin!
+----[  12115 ns] Number 8'd01 Functional Test Point PASS!!!
+        [  22000 ns] Test is running, debug_wb_pc = 0x1c052f04
+        [  32000 ns] Test is running, debug_wb_pc = 0x1c053ea4
+----[  36525 ns] Number 8'd02 Functional Test Point PASS!!!
+        [  42000 ns] Test is running, debug_wb_pc = 0x1c032a08
+        [  52000 ns] Test is running, debug_wb_pc = 0x1c0339a8
+----[  54915 ns] Number 8'd03 Functional Test Point PASS!!!
+        [  62000 ns] Test is running, debug_wb_pc = 0x1c01dacc
+        [  72000 ns] Test is running, debug_wb_pc = 0x1c01ea6c
+----[  79325 ns] Number 8'd04 Functional Test Point PASS!!!
+        [  82000 ns] Test is running, debug_wb_pc = 0x1c037ad0
+        [  92000 ns] Test is running, debug_wb_pc = 0x1c038a70
+        [ 102000 ns] Test is running, debug_wb_pc = 0x1c039a10
+----[ 103735 ns] Number 8'd05 Functional Test Point PASS!!!
+        [ 112000 ns] Test is running, debug_wb_pc = 0x1c028b94
+        [ 122000 ns] Test is running, debug_wb_pc = 0x1c029b34
+----[ 128145 ns] Number 8'd06 Functional Test Point PASS!!!
+        [ 132000 ns] Test is running, debug_wb_pc = 0x1c0193a8
+        [ 142000 ns] Test is running, debug_wb_pc = 0x1c01a348
+        [ 152000 ns] Test is running, debug_wb_pc = 0x1c01b2e8
+----[ 152555 ns] Number 8'd07 Functional Test Point PASS!!!
+        [ 162000 ns] Test is running, debug_wb_pc = 0x1c058dd4
+        [ 172000 ns] Test is running, debug_wb_pc = 0x1c059d74
+----[ 176965 ns] Number 8'd08 Functional Test Point PASS!!!
+        [ 182000 ns] Test is running, debug_wb_pc = 0x1c03a440
+        [ 192000 ns] Test is running, debug_wb_pc = 0x1c03b3e0
+----[ 201375 ns] Number 8'd09 Functional Test Point PASS!!!
+        [ 202000 ns] Test is running, debug_wb_pc = 0x1c04facc
+        [ 212000 ns] Test is running, debug_wb_pc = 0x1c050a6c
+        [ 222000 ns] Test is running, debug_wb_pc = 0x1c051a0c
+----[ 225785 ns] Number 8'd10 Functional Test Point PASS!!!
+        [ 232000 ns] Test is running, debug_wb_pc = 0x1c05cae0
+        [ 242000 ns] Test is running, debug_wb_pc = 0x1c05da80
+----[ 244175 ns] Number 8'd11 Functional Test Point PASS!!!
+        [ 252000 ns] Test is running, debug_wb_pc = 0x1c0448cc
+        [ 262000 ns] Test is running, debug_wb_pc = 0x1c04586c
+----[ 262565 ns] Number 8'd12 Functional Test Point PASS!!!
+        [ 272000 ns] Test is running, debug_wb_pc = 0x1c02b328
+----[ 280955 ns] Number 8'd13 Functional Test Point PASS!!!
+        [ 282000 ns] Test is running, debug_wb_pc = 0x1c06213c
+----[ 291525 ns] Number 8'd14 Functional Test Point PASS!!!
+        [ 292000 ns] Test is running, debug_wb_pc = 0x1c0643c0
+        [ 302000 ns] Test is running, debug_wb_pc = 0x1c065360
+----[ 302895 ns] Number 8'd15 Functional Test Point PASS!!!
+        [ 312000 ns] Test is running, debug_wb_pc = 0x1c01174c
+        [ 322000 ns] Test is running, debug_wb_pc = 0x1c0129e8
+        [ 332000 ns] Test is running, debug_wb_pc = 0x1c0139b4
+        [ 342000 ns] Test is running, debug_wb_pc = 0x1c0148c4
+        [ 352000 ns] Test is running, debug_wb_pc = 0x1c015868
+        [ 362000 ns] Test is running, debug_wb_pc = 0x1c016afc
+----[ 371485 ns] Number 8'd16 Functional Test Point PASS!!!
+        [ 372000 ns] Test is running, debug_wb_pc = 0x1c01f644
+        [ 382000 ns] Test is running, debug_wb_pc = 0x1c020558
+        [ 392000 ns] Test is running, debug_wb_pc = 0x1c021450
+        [ 402000 ns] Test is running, debug_wb_pc = 0x1c0224d8
+        [ 412000 ns] Test is running, debug_wb_pc = 0x1c023778
+        [ 422000 ns] Test is running, debug_wb_pc = 0x1c0248f4
+        [ 432000 ns] Test is running, debug_wb_pc = 0x1c0257ec
+        [ 442000 ns] Test is running, debug_wb_pc = 0x1c026700
+----[ 445025 ns] Number 8'd17 Functional Test Point PASS!!!
+        [ 452000 ns] Test is running, debug_wb_pc = 0x1c049f54
+        [ 462000 ns] Test is running, debug_wb_pc = 0x1c04ae5c
+        [ 472000 ns] Test is running, debug_wb_pc = 0x1c04bd80
+        [ 482000 ns] Test is running, debug_wb_pc = 0x1c04cc88
+        [ 492000 ns] Test is running, debug_wb_pc = 0x1c04dbac
+        [ 502000 ns] Test is running, debug_wb_pc = 0x1c04eab4
+----[ 503355 ns] Number 8'd18 Functional Test Point PASS!!!
+        [ 512000 ns] Test is running, debug_wb_pc = 0x1c02dcac
+        [ 522000 ns] Test is running, debug_wb_pc = 0x1c02eb24
+        [ 532000 ns] Test is running, debug_wb_pc = 0x1c02f9b4
+        [ 542000 ns] Test is running, debug_wb_pc = 0x1c030834
+        [ 552000 ns] Test is running, debug_wb_pc = 0x1c0316b4
+----[ 559685 ns] Number 8'd19 Functional Test Point PASS!!!
+        [ 562000 ns] Test is running, debug_wb_pc = 0x1c03fe4c
+        [ 572000 ns] Test is running, debug_wb_pc = 0x1c040d34
+        [ 582000 ns] Test is running, debug_wb_pc = 0x1c041c20
+        [ 592000 ns] Test is running, debug_wb_pc = 0x1c042b00
+        [ 602000 ns] Test is running, debug_wb_pc = 0x1c0439f4
+----[ 604015 ns] Number 8'd20 Functional Test Point PASS!!!
+--------------------------------------------------------------
+[ 604377 ns] Error!!!
+    reference: PC = 0x1c05551c, wb_rf_wnum = 0x0d, wb_rf_wdata = 0xe0c3351c
+    mycpu    : PC = 0x1c05551c, wb_rf_wnum = 0x0d, wb_rf_wdata = 0x00000000
+--------------------------------------------------------------
+$finish called at time : 604417 ns : File "C:/Projects/loongson/exp10/soc_verify/soc_bram/testbench/mycpu_tb.v" Line 169
+INFO: xsimkernel Simulation Memory Usage: 26968 KB (Peak: 26968 KB), Simulation CPU Usage: 40186 ms

@@ -1,0 +1,91 @@
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module tb_top.soc_lite.data_ram.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+==============================================================
+Test begin!
+----[  12115 ns] Number 8'd01 Functional Test Point PASS!!!
+        [  22000 ns] Test is running, debug_wb_pc = 0x1c043274
+        [  32000 ns] Test is running, debug_wb_pc = 0x1c044214
+----[  36525 ns] Number 8'd02 Functional Test Point PASS!!!
+        [  42000 ns] Test is running, debug_wb_pc = 0x1c02e840
+        [  52000 ns] Test is running, debug_wb_pc = 0x1c02f7e0
+----[  54915 ns] Number 8'd03 Functional Test Point PASS!!!
+        [  62000 ns] Test is running, debug_wb_pc = 0x1c01ac7c
+        [  72000 ns] Test is running, debug_wb_pc = 0x1c01bc1c
+----[  79325 ns] Number 8'd04 Functional Test Point PASS!!!
+        [  82000 ns] Test is running, debug_wb_pc = 0x1c030038
+        [  92000 ns] Test is running, debug_wb_pc = 0x1c030fd8
+        [ 102000 ns] Test is running, debug_wb_pc = 0x1c031f78
+----[ 103735 ns] Number 8'd05 Functional Test Point PASS!!!
+        [ 112000 ns] Test is running, debug_wb_pc = 0x1c0249cc
+        [ 122000 ns] Test is running, debug_wb_pc = 0x1c02596c
+----[ 128145 ns] Number 8'd06 Functional Test Point PASS!!!
+        [ 132000 ns] Test is running, debug_wb_pc = 0x1c0181b0
+        [ 142000 ns] Test is running, debug_wb_pc = 0x1c019150
+        [ 152000 ns] Test is running, debug_wb_pc = 0x1c01a0f0
+----[ 152555 ns] Number 8'd07 Functional Test Point PASS!!!
+        [ 162000 ns] Test is running, debug_wb_pc = 0x1c045784
+        [ 172000 ns] Test is running, debug_wb_pc = 0x1c046724
+----[ 176965 ns] Number 8'd08 Functional Test Point PASS!!!
+        [ 182000 ns] Test is running, debug_wb_pc = 0x1c0329a8
+        [ 192000 ns] Test is running, debug_wb_pc = 0x1c033948
+----[ 201375 ns] Number 8'd09 Functional Test Point PASS!!!
+        [ 202000 ns] Test is running, debug_wb_pc = 0x1c03fe3c
+        [ 212000 ns] Test is running, debug_wb_pc = 0x1c040ddc
+        [ 222000 ns] Test is running, debug_wb_pc = 0x1c041d7c
+----[ 225785 ns] Number 8'd10 Functional Test Point PASS!!!
+        [ 232000 ns] Test is running, debug_wb_pc = 0x1c047838
+        [ 242000 ns] Test is running, debug_wb_pc = 0x1c0487d8
+----[ 244175 ns] Number 8'd11 Functional Test Point PASS!!!
+        [ 252000 ns] Test is running, debug_wb_pc = 0x1c039584
+        [ 262000 ns] Test is running, debug_wb_pc = 0x1c03a524
+----[ 262565 ns] Number 8'd12 Functional Test Point PASS!!!
+        [ 272000 ns] Test is running, debug_wb_pc = 0x1c027160
+----[ 280955 ns] Number 8'd13 Functional Test Point PASS!!!
+        [ 282000 ns] Test is running, debug_wb_pc = 0x1c048c7c
+----[ 291525 ns] Number 8'd14 Functional Test Point PASS!!!
+        [ 292000 ns] Test is running, debug_wb_pc = 0x1c049bb8
+        [ 302000 ns] Test is running, debug_wb_pc = 0x1c04ab58
+----[ 302895 ns] Number 8'd15 Functional Test Point PASS!!!
+        [ 312000 ns] Test is running, debug_wb_pc = 0x1c0116cc
+        [ 322000 ns] Test is running, debug_wb_pc = 0x1c012968
+        [ 332000 ns] Test is running, debug_wb_pc = 0x1c013934
+        [ 342000 ns] Test is running, debug_wb_pc = 0x1c014844
+        [ 352000 ns] Test is running, debug_wb_pc = 0x1c0157e8
+        [ 362000 ns] Test is running, debug_wb_pc = 0x1c016a7c
+----[ 371485 ns] Number 8'd16 Functional Test Point PASS!!!
+        [ 372000 ns] Test is running, debug_wb_pc = 0x1c01c7f4
+        [ 382000 ns] Test is running, debug_wb_pc = 0x1c01d708
+        [ 392000 ns] Test is running, debug_wb_pc = 0x1c01e600
+        [ 402000 ns] Test is running, debug_wb_pc = 0x1c01f688
+        [ 412000 ns] Test is running, debug_wb_pc = 0x1c020928
+        [ 422000 ns] Test is running, debug_wb_pc = 0x1c021aa4
+        [ 432000 ns] Test is running, debug_wb_pc = 0x1c02299c
+        [ 442000 ns] Test is running, debug_wb_pc = 0x1c0238b0
+----[ 445025 ns] Number 8'd17 Functional Test Point PASS!!!
+        [ 452000 ns] Test is running, debug_wb_pc = 0x1c03b02c
+        [ 462000 ns] Test is running, debug_wb_pc = 0x1c03bf34
+        [ 472000 ns] Test is running, debug_wb_pc = 0x1c03ce58
+        [ 482000 ns] Test is running, debug_wb_pc = 0x1c03dd60
+        [ 492000 ns] Test is running, debug_wb_pc = 0x1c03ec84
+        [ 502000 ns] Test is running, debug_wb_pc = 0x1c03fb8c
+----[ 503355 ns] Number 8'd18 Functional Test Point PASS!!!
+        [ 512000 ns] Test is running, debug_wb_pc = 0x1c029ae4
+        [ 522000 ns] Test is running, debug_wb_pc = 0x1c02a95c
+        [ 532000 ns] Test is running, debug_wb_pc = 0x1c02b7ec
+        [ 542000 ns] Test is running, debug_wb_pc = 0x1c02c66c
+        [ 552000 ns] Test is running, debug_wb_pc = 0x1c02d4ec
+----[ 559685 ns] Number 8'd19 Functional Test Point PASS!!!
+        [ 562000 ns] Test is running, debug_wb_pc = 0x1c034b04
+        [ 572000 ns] Test is running, debug_wb_pc = 0x1c0359ec
+        [ 582000 ns] Test is running, debug_wb_pc = 0x1c0368d8
+        [ 592000 ns] Test is running, debug_wb_pc = 0x1c0377b8
+        [ 602000 ns] Test is running, debug_wb_pc = 0x1c0386ac
+----[ 604015 ns] Number 8'd20 Functional Test Point PASS!!!
+==============================================================
+Test end!
+----PASS!!!
+$finish called at time : 604465 ns : File "C:/Projects/loongson/exp9/soc_verify/soc_bram/testbench/mycpu_tb.v" Line 270
+INFO: xsimkernel Simulation Memory Usage: 26996 KB (Peak: 26996 KB), Simulation CPU Usage: 37280 ms

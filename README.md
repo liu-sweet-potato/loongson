@@ -28,7 +28,7 @@
 
 - [x] exp8  : 20条指令五级流水CPU，cancel解决control hazard，阻塞解决data hazard，测试func的n1~n20，增量开发。
 
-- [ ] exp9  : 20条指令五级流水CPU，forward优化data hazard处理，测试func的n1~n20，增量开发。
+- [x] exp9  : 20条指令五级流水CPU，forward优化data hazard处理，测试func的n1~n20，增量开发。
 
 - [ ] exp10 : 增加用户态运算类指令，测试func的n1~n36，增量开发。
 

@@ -19,7 +19,7 @@ module instr_decoder #
     output wire         not_ready_go,
     // control_hazard_detect
     input  wire         allowin,
-    input  wire         cancel
+    output  wire         cancel
 );
 
 //*********************************管脚定义****************************************
