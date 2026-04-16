@@ -7,15 +7,12 @@ verilog xil_defaultlib  --include "../../../../../../rtl/xilinx_ip/clk_pll" \
 "../../../../../../../../myCPU/alu.v" \
 "../../../../../../rtl/BRIDGE/bridge_1x2.v" \
 "../../../../../../rtl/CONFREG/confreg.v" \
-"../../../../../../../../myCPU/decoder_2_4.v" \
-"../../../../../../../../myCPU/decoder_4_16.v" \
-"../../../../../../../../myCPU/decoder_5_32.v" \
-"../../../../../../../../myCPU/decoder_6_64.v" \
 "../../../../../../../../myCPU/instr_decoder.v" \
 "../../../../../../../../myCPU/mycpu_top.v" \
 "../../../../../../../../myCPU/pipeline_buffer.v" \
 "../../../../../../../../myCPU/regfile.v" \
 "../../../../../../rtl/soc_lite_top.v" \
+"../../../../../../../../myCPU/tools.v" \
 "../../../../../../testbench/mycpu_tb.v" \
 
 # compile glbl module

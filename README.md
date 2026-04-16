@@ -30,7 +30,7 @@
 
 - [x] exp9  : 20条指令五级流水CPU，forward优化data hazard处理，测试func的n1~n20，增量开发。
 
-- [ ] exp10 : 增加用户态运算类指令，测试func的n1~n36，增量开发。
+- [x] exp10 : 增加用户态运算类指令，测试func的n1~n36，增量开发。（IP Implementation`./exp10/design/36inst.drawio`为设计图）
 
 - [ ] exp11 : 增加用户态转移指令和除了ll.w、sc.w之外的用户态访存指令，测试func的n1~n46，增量开发。
 

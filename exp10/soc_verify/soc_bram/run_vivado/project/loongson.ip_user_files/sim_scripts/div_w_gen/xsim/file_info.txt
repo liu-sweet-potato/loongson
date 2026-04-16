@@ -1,0 +1,2 @@
+div_w_gen.vhd,vhdl,xil_defaultlib,../../../../loongson.gen/sources_1/ip/div_w_gen/sim/div_w_gen.vhd,
+glbl.v,Verilog,xil_defaultlib,glbl.v
