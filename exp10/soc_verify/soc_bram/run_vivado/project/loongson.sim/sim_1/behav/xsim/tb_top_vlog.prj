@@ -7,7 +7,9 @@ verilog xil_defaultlib  --include "../../../../../../rtl/xilinx_ip/clk_pll" \
 "../../../../../../../../myCPU/alu.v" \
 "../../../../../../rtl/BRIDGE/bridge_1x2.v" \
 "../../../../../../rtl/CONFREG/confreg.v" \
+"../../../../../../../../myCPU/divider.v" \
 "../../../../../../../../myCPU/instr_decoder.v" \
+"../../../../../../../../myCPU/multiplier.v" \
 "../../../../../../../../myCPU/mycpu_top.v" \
 "../../../../../../../../myCPU/pipeline_buffer.v" \
 "../../../../../../../../myCPU/regfile.v" \

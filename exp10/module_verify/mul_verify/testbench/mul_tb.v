@@ -34,15 +34,15 @@ module mul_tb;
 	end
 	always #5 mul_clk = ~mul_clk;
 
-//äº§ç”Ÿéšæœºä¹˜æ•°å’Œæœ‰ç¬¦å·æ§åˆ¶ä¿¡å·
+//²úÉúËæ»ú³ËÊıºÍÓĞ·ûºÅ¿ØÖÆĞÅºÅ
 always @(posedge mul_clk)
 begin
     x          <= $random;
-    y          <= $random; //$randomä¸ºç³»ç»Ÿä»»åŠ¡ï¼Œäº§ç”Ÿä¸€ä¸ªéšæœºçš„32ä½æœ‰ç¬¦å·æ•°
-    mul_signed <= {$random}%2; //åŠ äº†æ‹¼æ¥ç¬¦ï¼Œ{$random}äº§ç”Ÿä¸€ä¸ªéè´Ÿæ•°ï¼Œé™¤2å–ä½™å¾—åˆ°0æˆ–1
+    y          <= $random; //$randomÎªÏµÍ³ÈÎÎñ£¬²úÉúÒ»¸öËæ»úµÄ32Î»ÓĞ·ûºÅÊı
+    mul_signed <= {$random}%2; //¼ÓÁËÆ´½Ó·û£¬{$random}²úÉúÒ»¸ö·Ç¸ºÊı£¬³ı2È¡ÓàµÃµ½0»ò1
 end
 
-//å¯„å­˜ä¹˜æ•°å’Œæœ‰ç¬¦å·ä¹˜æ§åˆ¶ä¿¡å·ï¼Œå› ä¸ºæ˜¯ä¸¤çº§æµæ°´ï¼Œæ•…å­˜ä¸€æ‹
+//¼Ä´æ³ËÊıºÍÓĞ·ûºÅ³Ë¿ØÖÆĞÅºÅ£¬ÒòÎªÊÇÁ½¼¶Á÷Ë®£¬¹Ê´æÒ»ÅÄ
 reg [31:0] x_r;
 reg [31:0] y_r;
 reg          mul_signed_r;
@@ -63,7 +63,7 @@ begin
     end
 end
 
-//å‚è€ƒç»“æœ
+//²Î¿¼½á¹û
 wire signed [63:0] result_ref;
 wire signed [32:0] x_e;
 wire signed [32:0] y_e;
@@ -72,17 +72,17 @@ assign y_e        = {mul_signed_r & y_r[31],y_r};
 assign result_ref = x_e * y_e;
 assign ok         = (result_ref == result);
 
-//æ‰“å°è¿ç®—ç»“æœ
+//´òÓ¡ÔËËã½á¹û
 initial begin
     $monitor("x = %d, y = %d, signed = %d, result = %d,OK=%b",x_e,y_e,mul_signed_r,result,ok);
 end
 
-//åˆ¤æ–­ç»“æœæ˜¯å¦æ­£ç¡®
+//ÅĞ¶Ï½á¹ûÊÇ·ñÕıÈ·
 always @(posedge mul_clk)
 begin
 	if (!ok)
     begin
-	    $display("ErrorÂ£Âºx = %d, y = %d,result = %d, result_ref = %d, OK=%b",x_e,y_e,result,result_ref,ok);
+	    $display("Error??x = %d, y = %d,result = %d, result_ref = %d, OK=%b",x_e,y_e,result,result_ref,ok);
 	    $finish;
 	end
 end

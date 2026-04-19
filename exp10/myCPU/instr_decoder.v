@@ -1,6 +1,6 @@
 module instr_decoder #
 (
-    parameter WIDTH=29
+    parameter WIDTH=32
 )(
     // instr_decoder
     input  wire [31     :0] inst,   
@@ -15,7 +15,7 @@ module instr_decoder #
     // imm_extension
     output wire [31:0]  imm,
     // data_hazard_detect
-    input  wire [24:0]  data_hazard_signals,
+    input  wire [25:0]  data_hazard_signals,
     output wire         not_ready_go,
     output wire [3 :0]  sel_rj_value,
     output wire [3 :0]  sel_rkd_value,
@@ -23,6 +23,7 @@ module instr_decoder #
     input  wire         allowin,
     output  wire         cancel
 );
+
 
 //*********************************管脚定义****************************************
 
@@ -78,6 +79,9 @@ wire        inst_mod_w;
 wire        inst_div_wu;
 wire        inst_mod_wu;
 
+wire        inst_mul;
+wire        inst_mulh;
+
 wire        need_ui5;
 wire        need_ui12;
 wire        need_si12;
@@ -91,12 +95,13 @@ wire [18:0] alu_op          ;  // one-hot
 wire        src1_is_pc      ;  // sel_alu_src1
 wire        src2_is_imm     ;  // sel_alu_src2
 wire        src2_is_4       ;  // sel_alu_src2
-wire [4:0]  sel_alu_src2    ;  // sel_alu_src2
+wire [4 :0] sel_alu_src2    ;  // sel_alu_src2
 wire        res_from_mem    ;  // sel_rf_res
 wire        dst_is_r1       ;  // sel_rf_dst
 wire        gr_we           ;  // rf_we
 wire        mem_we          ;  // data_ram_we
 wire        src_reg_is_rd   ;  // sel_rf_ra2
+wire [2 :0] sel_mul_result  ;  // sel_rf_ra2
 
 // br unit
 wire [31:0] br_offs;
@@ -128,6 +133,7 @@ wire        WB_dst_is_r1;
 wire [4 :0] WB_rd;
 
 wire        EX_load;
+wire        EX_mul;
 
 wire        ID_EX_rd_value_data_hazard;
 wire        ID_EX_rj_value_data_hazard;
@@ -226,27 +232,32 @@ assign dst_is_r1     = inst_bl;
 assign res_from_mem  = inst_ld_w;
 assign mem_we        = inst_st_w;
 
+assign inst_mulh = inst_mulh_w | inst_mulh_wu;
+assign inst_mul = inst_mulh | inst_mul_w;
+assign sel_mul_result={inst_mulh, inst_mul_w, ~inst_mul};  // control signals of two-cycle multiplier
 
 // EXE
-assign alu_op[ 0] = inst_add_w | inst_addi_w | inst_ld_w | inst_st_w | inst_jirl | inst_bl | inst_pcaddu12i;     // op_add
-assign alu_op[ 1] = inst_sub_w;                                                                                                      
-assign alu_op[ 2] = inst_slt | inst_slti;
-assign alu_op[ 3] = inst_sltu | inst_sltui;
-assign alu_op[ 4] = inst_and | inst_andi;
-assign alu_op[ 5] = inst_nor;
-assign alu_op[ 6] = inst_or | inst_ori;
-assign alu_op[ 7] = inst_xor | inst_xori;
-assign alu_op[ 8] = inst_sll_w | inst_slli_w;
-assign alu_op[ 9] = inst_srl_w | inst_srli_w;
-assign alu_op[10] = inst_sra_w | inst_srai_w;
-assign alu_op[11] = inst_lu12i_w;
-assign alu_op[12] = inst_mul_w;
-assign alu_op[13] = inst_mulh_w;
-assign alu_op[14] = inst_mulh_wu;
-assign alu_op[15] = inst_div_w;
-assign alu_op[16] = inst_mod_w;
-assign alu_op[17] = inst_div_wu;
-assign alu_op[18] = inst_mod_wu;
+assign alu_op = {
+    inst_mod_wu,
+    inst_div_wu,
+    inst_mod_w,
+    inst_div_w,
+    inst_mulh_wu,
+    inst_mulh_w,
+    inst_mul_w,
+    inst_lu12i_w,
+    inst_sra_w | inst_srai_w,
+    inst_srl_w | inst_srli_w,
+    inst_sll_w | inst_slli_w,
+    inst_xor | inst_xori,
+    inst_or | inst_ori,
+    inst_nor,
+    inst_and | inst_andi,
+    inst_sltu | inst_sltui,
+    inst_slt | inst_slti,
+    inst_sub_w,
+    inst_add_w | inst_addi_w | inst_ld_w | inst_st_w | inst_jirl | inst_bl | inst_pcaddu12i    // op_add
+};
 
 assign src1_is_pc    = inst_jirl | inst_bl | inst_pcaddu12i;
 assign src2_is_imm   = inst_slli_w      |
@@ -285,16 +296,17 @@ assign imm = {32{sel_alu_src2[4]}} & {20'b0, i12[11:0]}         |
 
 
 // control_signal
-assign control_signal[0] = gr_we;
-assign control_signal[1] = dst_is_r1;
-assign control_signal[2] = res_from_mem;
-assign control_signal[6:3] = {4{mem_we}};
-assign control_signal[25:7] = alu_op;
-assign control_signal[26] = src1_is_pc;
-assign control_signal[27] = src2_is_imm;
-assign control_signal[28] = src_reg_is_rd; 
-
-
+assign control_signal = {
+    src_reg_is_rd,
+    src2_is_imm,
+    src1_is_pc,
+    alu_op,
+    {4{mem_we}},
+    sel_mul_result,
+    res_from_mem,
+    dst_is_r1,
+    gr_we
+};
 
 // br unit
 assign sel_nextpc[0] = !sel_nextpc[1] && !sel_nextpc[2];
@@ -326,41 +338,30 @@ assign inst_src_include_rd = inst_bne | inst_beq | inst_st_w;
 assign inst_src_include_rj = ~inst_lu12i_w & ~inst_b & ~inst_bl & ~inst_pcaddu12i;
 assign inst_src_include_rk = inst_add_w | inst_sub_w | inst_slt | inst_sltu | inst_and | inst_or | inst_nor | inst_xor | inst_sll_w | inst_srl_w | inst_sra_w | inst_mul_w | inst_mulh_w | inst_mulh_wu | inst_div_w | inst_mod_w | inst_div_wu | inst_mod_wu;
 
-assign EX_valid = data_hazard_signals[0];
-assign EX_gr_we = data_hazard_signals[1];
-assign EX_dst_is_r1 = data_hazard_signals[2];
-assign EX_rd = data_hazard_signals[7:3];
+assign {
+    EX_mul, EX_load,  // load-use
+    WB_rd, WB_dst_is_r1, WB_gr_we, WB_valid,
+    MEM_rd, MEM_dst_is_r1, MEM_gr_we, MEM_valid,
+    EX_rd, EX_dst_is_r1, EX_gr_we, EX_valid
+} = data_hazard_signals;
 
-assign MEM_valid = data_hazard_signals[8];
-assign MEM_gr_we = data_hazard_signals[9];
-assign MEM_dst_is_r1 = data_hazard_signals[10];
-assign MEM_rd = data_hazard_signals[15:11];
-
-assign WB_valid = data_hazard_signals[16];
-assign WB_gr_we = data_hazard_signals[17];
-assign WB_dst_is_r1 = data_hazard_signals[18];
-assign WB_rd = data_hazard_signals[23:19];
-
-assign EX_load = data_hazard_signals[24];
 
 assign ID_EX_rd_value_data_hazard = valid & EX_valid & EX_gr_we & (inst_src_include_rd & rd==EX_rd | EX_dst_is_r1 & rd==1'd1) & rd!=5'd0;
-assign ID_EX_rj_value_data_hazard = valid & EX_valid & EX_gr_we & (inst_src_include_rj & rj==EX_rd | EX_dst_is_r1 & rj==1'd1) & rj!=5'd0;
 assign ID_EX_rk_value_data_hazard = valid & EX_valid & EX_gr_we & (inst_src_include_rk & rk==EX_rd | EX_dst_is_r1 & rk==1'd1) & rk!=5'd0;
 assign ID_EX_rkd_value_data_hazard  = ID_EX_rd_value_data_hazard | ID_EX_rk_value_data_hazard;
+assign ID_EX_rj_value_data_hazard = valid & EX_valid & EX_gr_we & (inst_src_include_rj & rj==EX_rd | EX_dst_is_r1 & rj==1'd1) & rj!=5'd0;
+
 
 assign ID_MEM_rd_value_data_hazard = valid & MEM_valid & MEM_gr_we & (inst_src_include_rd & rd==MEM_rd | MEM_dst_is_r1 & rd==1'd1) & rd!=5'd0;
-assign ID_MEM_rj_value_data_hazard = valid & MEM_valid & MEM_gr_we & (inst_src_include_rj & rj==MEM_rd | MEM_dst_is_r1 & rj==1'd1) & rj!=5'd0;
 assign ID_MEM_rk_value_data_hazard = valid & MEM_valid & MEM_gr_we & (inst_src_include_rk & rk==MEM_rd | MEM_dst_is_r1 & rk==1'd1) & rk!=5'd0;
 assign ID_MEM_rkd_value_data_hazard  = ID_MEM_rd_value_data_hazard | ID_MEM_rk_value_data_hazard;
+assign ID_MEM_rj_value_data_hazard = valid & MEM_valid & MEM_gr_we & (inst_src_include_rj & rj==MEM_rd | MEM_dst_is_r1 & rj==1'd1) & rj!=5'd0;
+
 
 assign ID_WB_rd_value_data_hazard = valid & WB_valid & WB_gr_we & (inst_src_include_rd & rd==WB_rd | WB_dst_is_r1 & rd==1'd1) & rd!=5'd0;
-assign ID_WB_rj_value_data_hazard = valid & WB_valid & WB_gr_we & (inst_src_include_rj & rj==WB_rd | WB_dst_is_r1 & rj==1'd1) & rj!=5'd0;
 assign ID_WB_rk_value_data_hazard = valid & WB_valid & WB_gr_we & (inst_src_include_rk & rk==WB_rd | WB_dst_is_r1 & rk==1'd1) & rk!=5'd0;
 assign ID_WB_rkd_value_data_hazard  = ID_WB_rd_value_data_hazard | ID_WB_rk_value_data_hazard;
-
-assign not_ready_go = valid & EX_valid & EX_gr_we & inst_src_include_rd & rd==EX_rd & EX_load & rd!=5'd0 |
-                      valid & EX_valid & EX_gr_we & inst_src_include_rj & rj==EX_rd & EX_load & rj!=5'd0 |
-                      valid & EX_valid & EX_gr_we & inst_src_include_rk & rk==EX_rd & EX_load & rk!=5'd0;
+assign ID_WB_rj_value_data_hazard = valid & WB_valid & WB_gr_we & (inst_src_include_rj & rj==WB_rd | WB_dst_is_r1 & rj==1'd1) & rj!=5'd0;
 
 assign {select_EX_rj_value, select_MEM_rj_value, select_WB_rj_value, select_ID_rj_value} = ID_EX_rj_value_data_hazard   ? 4'b1000 :
                                                                                            ID_MEM_rj_value_data_hazard  ? 4'b0100 :
@@ -372,6 +373,11 @@ assign {select_EX_rkd_value, select_MEM_rkd_value, select_WB_rkd_value, select_I
 
 assign sel_rj_value = {select_EX_rj_value, select_MEM_rj_value, select_WB_rj_value, select_ID_rj_value};
 assign sel_rkd_value = {select_EX_rkd_value, select_MEM_rkd_value, select_WB_rkd_value, select_ID_rkd_value};
+
+// load-use
+assign not_ready_go = valid & EX_valid & EX_gr_we & inst_src_include_rd & rd==EX_rd & (EX_load | EX_mul) & rd!=5'd0 |
+                      valid & EX_valid & EX_gr_we & inst_src_include_rj & rj==EX_rd & (EX_load | EX_mul) & rj!=5'd0 |
+                      valid & EX_valid & EX_gr_we & inst_src_include_rk & rk==EX_rd & (EX_load | EX_mul) & rk!=5'd0;
 
 // control_hazard_detect
 assign cancel = valid && allowin && br_taken;

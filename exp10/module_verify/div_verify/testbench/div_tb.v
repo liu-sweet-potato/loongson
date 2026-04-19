@@ -23,7 +23,7 @@ module div_tb;
 		.div_signed(div_signed), 
 		.x(x), 
 		.y(y), 
-		.s(s), 
+		.q(s), 
 		.r(r), 
 		.complete(complete)
 	);

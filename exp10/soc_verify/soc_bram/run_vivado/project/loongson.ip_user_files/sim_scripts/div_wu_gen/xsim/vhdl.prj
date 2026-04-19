@@ -1,4 +1,0 @@
-vhdl xil_defaultlib  \
-"../../../../loongson.gen/sources_1/ip/div_wu_gen/sim/div_wu_gen.vhd" \
-
-nosort
