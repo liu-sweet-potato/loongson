@@ -6,7 +6,7 @@ C:/Projects/loongson/exp10/module_verify/div_verify/testbench/div_tb.v,177650367
 C:/Projects/loongson/exp10/module_verify/mul_verify/testbench/mul_tb.v,1776603482,verilog,,,,mul_tb,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
 C:/Projects/loongson/exp10/myCPU/alu.v,1776774107,verilog,,C:/Projects/loongson/exp10/soc_verify/soc_bram/rtl/BRIDGE/bridge_1x2.v,,alu,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
 C:/Projects/loongson/exp10/myCPU/divider.v,1776505960,verilog,,C:/Projects/loongson/exp10/myCPU/instr_decoder.v,,div,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
-C:/Projects/loongson/exp10/myCPU/instr_decoder.v,1776754228,verilog,,C:/Projects/loongson/exp10/myCPU/multiplier.v,,instr_decoder,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
+C:/Projects/loongson/exp10/myCPU/instr_decoder.v,1776774743,verilog,,C:/Projects/loongson/exp10/myCPU/multiplier.v,,instr_decoder,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
 C:/Projects/loongson/exp10/myCPU/multiplier.v,1776610126,verilog,,C:/Projects/loongson/exp10/myCPU/mycpu_top.v,,booth_encoder;full_adder;mul;wallace_tree,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
 C:/Projects/loongson/exp10/myCPU/mycpu_top.v,1776772042,verilog,,C:/Projects/loongson/exp10/myCPU/pipeline_buffer.v,,mycpu_top,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,
 C:/Projects/loongson/exp10/myCPU/pipeline_buffer.v,1765605833,verilog,,C:/Projects/loongson/exp10/myCPU/regfile.v,,pipeline_buffer,,,../../../../../../rtl/xilinx_ip/clk_pll,,,,,

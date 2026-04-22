@@ -32,7 +32,7 @@
 
 - [x] exp10 : 增加用户态运算类指令，测试func的n1~n36，增量开发。（Manual Implementation`./exp10/design/36inst.drawio`为设计图，参数化重构代码以便增量开发）
 
-- [ ] exp11 : 增加用户态转移指令和除了ll.w、sc.w之外的用户态访存指令，测试func的n1~n46，增量开发。
+- [x] exp11 : 增加用户态转移指令和除了ll.w、sc.w之外的用户态访存指令，测试func的n1~n46，增量开发。
 
 - [ ] exp12 : 支持syscall例外，测试func的n1~n47，增量开发。
 
