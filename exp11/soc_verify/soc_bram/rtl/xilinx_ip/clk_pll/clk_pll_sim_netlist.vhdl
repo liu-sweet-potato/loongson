@@ -1,10 +1,10 @@
--- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
--- Date        : Tue Apr 21 20:59:50 2026
+-- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+-- Date        : Sat May 30 21:44:12 2026
 -- Host        : Matrix running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Projects/loongson/exp11/soc_verify/soc_bram/rtl/xilinx_ip/clk_pll/clk_pll_sim_netlist.vhdl
+--               C:/Projects/loongson/exp11/soc_verify/soc_bram/rtl/xilinx_ip/clk_pll/clk_pll_sim_netlist.vhdl
 -- Design      : clk_pll
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,15 +14,17 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity clk_pll_clk_wiz is
+entity clk_pll_clk_pll_clk_wiz is
   port (
     cpu_clk : out STD_LOGIC;
     timer_clk : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-end clk_pll_clk_wiz;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of clk_pll_clk_pll_clk_wiz : entity is "clk_pll_clk_wiz";
+end clk_pll_clk_pll_clk_wiz;
 
-architecture STRUCTURE of clk_pll_clk_wiz is
+architecture STRUCTURE of clk_pll_clk_pll_clk_wiz is
   signal clk_in1_clk_pll : STD_LOGIC;
   signal clkfbout_buf_clk_pll : STD_LOGIC;
   signal clkfbout_clk_pll : STD_LOGIC;
@@ -55,7 +57,6 @@ clkf_buf: unisim.vcomponents.BUFG
     );
 clkin1_ibufg: unisim.vcomponents.IBUF
     generic map(
-      CCIO_EN => "TRUE",
       IOSTANDARD => "DEFAULT"
     )
         port map (
@@ -146,7 +147,7 @@ end clk_pll;
 
 architecture STRUCTURE of clk_pll is
 begin
-inst: entity work.clk_pll_clk_wiz
+inst: entity work.clk_pll_clk_pll_clk_wiz
      port map (
       clk_in1 => clk_in1,
       cpu_clk => cpu_clk,

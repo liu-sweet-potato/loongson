@@ -45,8 +45,9 @@
 -- PART OF THIS FILE AT ALL TIMES.
 -- 
 -- DO NOT MODIFY THIS FILE.
+
 -- IP VLNV: xilinx.com:ip:blk_mem_gen:8.4
--- IP Revision: 5
+-- IP Revision: 4
 
 -- The following code must appear in the VHDL architecture header.
 
@@ -58,7 +59,7 @@ COMPONENT inst_ram
     wea : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
     dina : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(31 DOWNTO 0) 
+    douta : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -81,6 +82,4 @@ your_instance_name : inst_ram
 -- You must compile the wrapper file inst_ram.vhd when simulating
 -- the core, inst_ram. When compiling the wrapper file, be sure to
 -- reference the VHDL simulation library.
-
-
 

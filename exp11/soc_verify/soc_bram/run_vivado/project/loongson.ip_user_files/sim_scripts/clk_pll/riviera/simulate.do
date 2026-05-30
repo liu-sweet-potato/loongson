@@ -1,10 +1,7 @@
 onbreak {quit -force}
 onerror {quit -force}
 
-asim +access +r +m+clk_pll  -L xpm -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -O5 xil_defaultlib.clk_pll xil_defaultlib.glbl
-
-set NumericStdNoWarnings 1
-set StdArithNoWarnings 1
+asim -t 1ps +access +r +m+clk_pll -L xpm -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -O5 xil_defaultlib.clk_pll xil_defaultlib.glbl
 
 do {wave.do}
 
@@ -13,7 +10,7 @@ view structure
 
 do {clk_pll.udo}
 
-run 1000ns
+run -all
 
 endsim
 

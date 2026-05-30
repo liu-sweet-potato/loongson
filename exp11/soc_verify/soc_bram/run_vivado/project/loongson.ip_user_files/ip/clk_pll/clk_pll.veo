@@ -75,7 +75,5 @@
     .cpu_clk(cpu_clk),     // output cpu_clk
     .timer_clk(timer_clk),     // output timer_clk
    // Clock in ports
-    .clk_in1(clk_in1)      // input clk_in1
-);
-
+    .clk_in1(clk_in1));      // input clk_in1
 // INST_TAG_END ------ End INSTANTIATION Template ---------

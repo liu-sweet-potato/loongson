@@ -1,10 +1,10 @@
-// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-// Date        : Tue Apr 21 20:59:50 2026
+// Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+// Date        : Sat May 30 21:44:12 2026
 // Host        : Matrix running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Projects/loongson/exp11/soc_verify/soc_bram/rtl/xilinx_ip/clk_pll/clk_pll_sim_netlist.v
+//               C:/Projects/loongson/exp11/soc_verify/soc_bram/rtl/xilinx_ip/clk_pll/clk_pll_sim_netlist.v
 // Design      : clk_pll
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -25,13 +25,14 @@ module clk_pll
   wire cpu_clk;
   wire timer_clk;
 
-  clk_pll_clk_wiz inst
+  clk_pll_clk_pll_clk_wiz inst
        (.clk_in1(clk_in1),
         .cpu_clk(cpu_clk),
         .timer_clk(timer_clk));
 endmodule
 
-module clk_pll_clk_wiz
+(* ORIG_REF_NAME = "clk_pll_clk_wiz" *) 
+module clk_pll_clk_pll_clk_wiz
    (cpu_clk,
     timer_clk,
     clk_in1);
@@ -64,7 +65,6 @@ module clk_pll_clk_wiz
   (* IBUF_DELAY_VALUE = "0" *) 
   (* IFD_DELAY_VALUE = "AUTO" *) 
   IBUF #(
-    .CCIO_EN("TRUE"),
     .IOSTANDARD("DEFAULT")) 
     clkin1_ibufg
        (.I(clk_in1),
@@ -141,15 +141,12 @@ module glbl ();
 
     parameter ROC_WIDTH = 100000;
     parameter TOC_WIDTH = 0;
-    parameter GRES_WIDTH = 10000;
-    parameter GRES_START = 10000;
 
 //--------   STARTUP Globals --------------
     wire GSR;
     wire GTS;
     wire GWE;
     wire PRLD;
-    wire GRESTORE;
     tri1 p_up_tmp;
     tri (weak1, strong0) PLL_LOCKG = p_up_tmp;
 
@@ -162,7 +159,6 @@ module glbl ();
     reg GSR_int;
     reg GTS_int;
     reg PRLD_int;
-    reg GRESTORE_int;
 
 //--------   JTAG Globals --------------
     wire JTAG_TDO_GLBL;
@@ -190,7 +186,6 @@ module glbl ();
     assign (strong1, weak0) GSR = GSR_int;
     assign (strong1, weak0) GTS = GTS_int;
     assign (weak1, weak0) PRLD = PRLD_int;
-    assign (strong1, weak0) GRESTORE = GRESTORE_int;
 
     initial begin
 	GSR_int = 1'b1;
@@ -204,14 +199,6 @@ module glbl ();
 	GTS_int = 1'b1;
 	#(TOC_WIDTH)
 	GTS_int = 1'b0;
-    end
-
-    initial begin 
-	GRESTORE_int = 1'b0;
-	#(GRES_START);
-	GRESTORE_int = 1'b1;
-	#(GRES_WIDTH);
-	GRESTORE_int = 1'b0;
     end
 
 endmodule

@@ -1,8 +1,9 @@
+Vivado Simulator 2019.2
 Time resolution is 1 ps
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module tb_top.soc_lite.inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
-Block Memory Generator module tb_top.soc_lite.data_ram.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module tb_top.soc_lite.data_ram.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 ==============================================================
 Test begin!
 ----[  12115 ns] Number 8'd01 Functional Test Point PASS!!!
@@ -189,4 +190,3 @@ Test begin!
 Test end!
 ----PASS!!!
 $finish called at time : 1359315 ns : File "C:/Projects/loongson/exp11/soc_verify/soc_bram/testbench/mycpu_tb.v" Line 270
-INFO: xsimkernel Simulation Memory Usage: 30564 KB (Peak: 30564 KB), Simulation CPU Usage: 608577 ms

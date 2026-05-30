@@ -5,6 +5,10 @@
 >  1. minicpu_env/miniCPU/目录下的代码功能不全，是有意为之，无需提issue修正。
 >  2. mycpu_env/myCPU/目录下的代码有功能错误，亦是有意为之，无需提issue修正。
 
+## 注意事项
+exp1~exp10在Vivado **2022.2**, exp11及以后在Vivado **2019.2**
+非相关版本，建议下载 `https://gitee.com/loongson-edu/cdp_ede_local/releases` 下实验环境，利用cpu下代码，直接重建
+
 ## 实验安排简介
 
 ### **文件路径：dc_env**
