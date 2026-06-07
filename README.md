@@ -1,4 +1,5 @@
 # LoongArch CPU 设计实验
+![](./exp11/assets/design.png)
 对应实验手册请参阅[《LoongArch CPU设计实验》](https://bookdown.org/loongson/_book3/)。
 
 >**NOTE:** 
@@ -7,7 +8,7 @@
 
 ## 注意事项
 exp1~exp10在Vivado **2022.2**, exp11及以后在Vivado **2019.2**
-非相关版本，建议下载 `https://gitee.com/loongson-edu/cdp_ede_local/releases` 下实验环境，利用cpu下代码，直接重建
+非相关版本，建议下载 `https://gitee.com/loongson-edu/cdp_ede_local/releases` 下实验环境，利用本项目`myCPU`下代码，直接重建
 
 ## 实验安排简介
 
